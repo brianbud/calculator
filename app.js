@@ -7,6 +7,9 @@ let subtract = (a, b) => {
   return a - b;
 };
 //multiply
+let multiply = (a, b) => {
+  return a * b;
+};
 //divide
 
-console.log(subtract(1, 4));
+console.log(multiply(2, 4));
