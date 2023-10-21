@@ -3,7 +3,10 @@ let add = (a, b) => {
   return a + b;
 };
 //subtract
+let subtract = (a, b) => {
+  return a - b;
+};
 //multiply
 //divide
 
-console.log(add(1, 4));
+console.log(subtract(1, 4));
