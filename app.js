@@ -1,3 +1,12 @@
+const display = document.querySelector("#display");
+const buttons = document.querySelectorAll("button");
+display.textContent = "";
+buttons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    display.textContent += e.target.value;
+  });
+});
+
 let firstNum;
 let operator;
 let secondNum;
