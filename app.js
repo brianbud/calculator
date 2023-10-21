@@ -1,15 +1,25 @@
 const display = document.querySelector("#display");
-const buttons = document.querySelectorAll("button");
-display.textContent = "";
-buttons.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    display.textContent += e.target.value;
-  });
-});
+const numbers = document.querySelectorAll(".number");
+const operators = document.querySelectorAll(".operator");
+const clearBtn = document.querySelector(".clear");
 
 let firstNum;
 let operator;
 let secondNum;
+
+numbers.forEach((num) => {
+  num.addEventListener("click", (e) => {
+    console.log(e.target.value);
+    display.textContent += e.target.value;
+  });
+});
+
+operators.forEach((op) => {
+  op.addEventListener("click", (e) => {
+    console.log(e.target.value);
+    display.textContent += e.target.value;
+  });
+});
 
 let add = (a, b) => {
   return a + b;
