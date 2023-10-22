@@ -28,6 +28,7 @@ operators.forEach((op) => {
 
 equalsBtn.addEventListener("click", (e) => {
   secondNum = display.textContent;
+  miniDisplay.textContent = `${firstNum} ${operator} ${secondNum} =`;
   display.textContent = operate(operator, firstNum, secondNum);
 });
 
