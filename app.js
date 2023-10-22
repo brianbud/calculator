@@ -3,6 +3,7 @@ const miniDisplay = document.querySelector("#mini-display");
 const numbers = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
 const clearBtn = document.querySelector(".clear");
+const clearEntryBtn = document.querySelector(".clearEntry");
 const pointBtn = document.querySelector(".point");
 const equalsBtn = document.querySelector(".equals");
 
@@ -35,6 +36,10 @@ equalsBtn.addEventListener("click", (e) => {
 clearBtn.addEventListener("click", () => {
   display.textContent = "";
   miniDisplay.textContent = "";
+});
+
+clearEntryBtn.addEventListener("click", () => {
+  display.textContent = "";
 });
 
 //Math operators
