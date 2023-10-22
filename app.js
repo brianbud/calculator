@@ -33,6 +33,7 @@ equalsBtn.addEventListener("click", (e) => {
 
 clearBtn.addEventListener("click", () => {
   display.textContent = "";
+  miniDisplay.textContent = "";
 });
 
 //Math operators
