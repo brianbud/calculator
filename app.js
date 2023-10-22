@@ -27,6 +27,16 @@ operators.forEach((op) => {
   });
 });
 
+pointBtn.addEventListener("click", (e) => {
+  if (display.textContent === "") {
+    display.textContent = "0" + e.target.value;
+  } else if (display.textContent.includes(e.target.value)) {
+    return;
+  } else {
+    display.textContent += e.target.value;
+  }
+});
+
 equalsBtn.addEventListener("click", (e) => {
   secondNum = display.textContent;
   miniDisplay.textContent = `${firstNum} ${operator} ${secondNum} =`;
