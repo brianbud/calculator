@@ -91,16 +91,16 @@ function operate(operator, firstNum, secondNum) {
 
   switch (operator) {
     case "+":
-      return add(a, b);
+      return add(a, b).toFixed(2);
       break;
     case "-":
-      return subtract(a, b);
+      return subtract(a, b).toFixed(2);
       break;
     case "*":
-      return multiply(a, b);
+      return multiply(a, b).toFixed(2);
       break;
     case "/":
-      return divide(a, b);
+      return divide(a, b).toFixed(2);
     default:
       return `something wrong with the operator: ${operator}`;
   }
