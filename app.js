@@ -46,10 +46,14 @@ pointBtn.addEventListener("click", (e) => {
 });
 
 equalsBtn.addEventListener("click", (e) => {
-  secondNum = display.textContent;
-  miniDisplay.textContent = `${firstNum} ${operator} ${secondNum} =`;
-  currentValue = operate(operator, firstNum, secondNum);
-  updateDisplay();
+  if (firstNum == "" || operator == "" || currentValue == "") {
+    return;
+  } else {
+    secondNum = display.textContent;
+    miniDisplay.textContent = `${firstNum} ${operator} ${secondNum} =`;
+    currentValue = operate(operator, firstNum, secondNum);
+    updateDisplay();
+  }
 });
 
 clearBtn.addEventListener("click", () => {
