@@ -1,4 +1,5 @@
 const display = document.querySelector("#display");
+const miniDisplay = document.querySelector("#mini-display");
 const numbers = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
 const clearBtn = document.querySelector(".clear");
@@ -20,6 +21,7 @@ operators.forEach((op) => {
   op.addEventListener("click", (e) => {
     firstNum = display.textContent;
     operator = e.target.value;
+    miniDisplay.textContent = `${firstNum} ${operator}`;
     display.textContent = "";
   });
 });
