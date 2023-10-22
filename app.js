@@ -77,7 +77,12 @@ let multiply = (a, b) => {
 };
 
 let divide = (a, b) => {
-  return a / b;
+  if (b == 0) {
+    alert("You can't divide by 0");
+    return;
+  } else {
+    return a / b;
+  }
 };
 
 function operate(operator, firstNum, secondNum) {
