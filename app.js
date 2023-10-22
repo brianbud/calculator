@@ -10,46 +10,57 @@ const equalsBtn = document.querySelector(".equals");
 let firstNum;
 let operator;
 let secondNum;
+let currentValue = "";
+
+function updateDisplay() {
+  display.textContent = currentValue;
+}
 
 //Event Listeners
 numbers.forEach((num) => {
   num.addEventListener("click", (e) => {
-    display.textContent += e.target.value;
+    currentValue += e.target.value;
+    updateDisplay();
   });
 });
 
 operators.forEach((op) => {
   op.addEventListener("click", (e) => {
-    firstNum = display.textContent;
+    firstNum = currentValue;
     operator = e.target.value;
     miniDisplay.textContent = `${firstNum} ${operator}`;
-    display.textContent = "";
+    currentValue = "";
+    updateDisplay();
   });
 });
 
 pointBtn.addEventListener("click", (e) => {
   if (display.textContent === "") {
-    display.textContent = "0" + e.target.value;
+    currentValue = "0" + e.target.value;
   } else if (display.textContent.includes(e.target.value)) {
     return;
   } else {
-    display.textContent += e.target.value;
+    currentValue += e.target.value;
   }
+  updateDisplay();
 });
 
 equalsBtn.addEventListener("click", (e) => {
   secondNum = display.textContent;
   miniDisplay.textContent = `${firstNum} ${operator} ${secondNum} =`;
-  display.textContent = operate(operator, firstNum, secondNum);
+  currentValue = operate(operator, firstNum, secondNum);
+  updateDisplay();
 });
 
 clearBtn.addEventListener("click", () => {
-  display.textContent = "";
+  currentValue = "";
+  updateDisplay();
   miniDisplay.textContent = "";
 });
 
 clearEntryBtn.addEventListener("click", () => {
-  display.textContent = "";
+  currentValue = "";
+  updateDisplay();
 });
 
 //Math operators
