@@ -2,6 +2,7 @@ const display = document.querySelector("#display");
 const miniDisplay = document.querySelector("#mini-display");
 const numbers = document.querySelectorAll(".number");
 const operators = document.querySelectorAll(".operator");
+const undoBtn = document.querySelector(".undo");
 const clearBtn = document.querySelector(".clear");
 const clearEntryBtn = document.querySelector(".clearEntry");
 const pointBtn = document.querySelector(".point");
@@ -64,6 +65,11 @@ clearBtn.addEventListener("click", () => {
 
 clearEntryBtn.addEventListener("click", () => {
   currentValue = "";
+  updateDisplay();
+});
+
+undoBtn.addEventListener("click", () => {
+  currentValue = currentValue.slice(0, -1);
   updateDisplay();
 });
 
